@@ -8,6 +8,7 @@ body {
   border: 1px solid;
   text-align: center;
   float: left;
+  background-color: white;
 }
 
 .board-row {
