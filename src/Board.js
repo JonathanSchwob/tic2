@@ -1,25 +1,10 @@
-import { useState } from "react";
 import Square from "./Square.js";
 import "./Board.css";
 
-function Board() {
-  const [board, setBoard] = useState(Array(9).fill(null));
-  const [xIsNext, setXIsNext] = useState("X");
-
+function Board({ board, checkWinner, handlePlay }) {
   function handleClick(position) {
-    if (board[position]) return;
-
-    const newBoard = board.slice();
-
-    if (xIsNext === "X") {
-      newBoard[position] = "X";
-      setXIsNext("O");
-    } else {
-      newBoard[position] = "O";
-      setXIsNext("X");
-    }
-
-    setBoard(newBoard);
+    handlePlay(position);
+    checkWinner();
   }
 
   return (
