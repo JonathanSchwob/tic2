@@ -1,10 +1,9 @@
 import Square from "./Square.js";
 import "./Board.css";
 
-function Board({ board, checkWinner, handlePlay }) {
+function Board({ board, handlePlay }) {
   function handleClick(position) {
     handlePlay(position);
-    checkWinner();
   }
 
   return (

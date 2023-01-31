@@ -14,3 +14,7 @@ body {
 .board-row {
   clear: both;
 }
+
+.status {
+  padding: 10px;
+}

@@ -19,6 +19,7 @@ function Game() {
     }
 
     setBoard(newBoard);
+    checkWinner();
   }
 
   function checkWinner() {
@@ -33,16 +34,14 @@ function Game() {
       [3, 5, 7],
     ];
 
-    console.log(board);
+    console.log(board, "ehllo");
   }
 
   return (
-    <Board
-      board={board}
-      xIsNext={xIsNext}
-      checkWinner={checkWinner}
-      handlePlay={handlePlay}
-    />
+    <>
+      <div className="status">Next Turn: {xIsNext}</div>
+      <Board board={board} xIsNext={xIsNext} handlePlay={handlePlay} />
+    </>
   );
 }
 
