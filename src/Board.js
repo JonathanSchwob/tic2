@@ -4,10 +4,21 @@ import "./Board.css";
 
 function Board() {
   const [board, setBoard] = useState(Array(9).fill(null));
+  const [xIsNext, setXIsNext] = useState("X");
 
   function handleClick(position) {
+    if (board[position]) return;
+
     const newBoard = board.slice();
-    newBoard[position] = "X";
+
+    if (xIsNext === "X") {
+      newBoard[position] = "X";
+      setXIsNext("O");
+    } else {
+      newBoard[position] = "O";
+      setXIsNext("X");
+    }
+
     setBoard(newBoard);
   }
 
